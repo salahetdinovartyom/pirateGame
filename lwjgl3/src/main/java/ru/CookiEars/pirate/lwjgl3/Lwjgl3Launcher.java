@@ -17,7 +17,7 @@ public class Lwjgl3Launcher {
         configuration.setTitle("Pirate Treasure");
         configuration.useVsync(true);
         configuration.setForegroundFPS(Lwjgl3ApplicationConfiguration.getDisplayMode().refreshRate + 1);
-        configuration.setWindowedMode((int) SCREEN_WIDTH, (int) SCREEN_HEIGHT);
+        configuration.setWindowedMode(1920/2,1080/2);
         configuration.setWindowIcon("libgdx128.png", "libgdx64.png", "libgdx32.png", "libgdx16.png");
 //        configuration.setOpenGLEmulation(Lwjgl3ApplicationConfiguration.GLEmulation.ANGLE_GLES20, 0, 0);
         return configuration;

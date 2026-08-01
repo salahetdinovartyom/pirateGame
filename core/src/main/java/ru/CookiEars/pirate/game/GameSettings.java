@@ -3,7 +3,7 @@ package ru.CookiEars.pirate.game;
 import com.badlogic.gdx.Gdx;
 
 public class GameSettings {
-    private static final float baseHeight=560;
+    private static final float baseHeight=520;
     private static final float baseRatio = Gdx.graphics.getHeight() / baseHeight;
 
     public static final float SCREEN_HEIGHT= Gdx.graphics.getHeight()/baseRatio;

@@ -46,4 +46,9 @@ public abstract class BaseScreen extends ScreenAdapter {
     public void dispose() {
         baseStage.dispose();
     }
+
+    @Override
+    public  void resize(int width, int height) {
+        baseStage.getViewport().update(width, height,false);
+    }
 }
