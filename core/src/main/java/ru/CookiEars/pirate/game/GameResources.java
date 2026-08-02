@@ -1,0 +1,7 @@
+package ru.CookiEars.pirate.game;
+
+public class GameResources {
+    public static final String REFLECTIONS_TILESET_PATH="texture/background/reflections-tileset.png";
+    public static final String BACKGROUND_IMAGE_PATH="texture/background/background.png";
+    public static final String BIG_CLOUD_IMAGE_PATH="texture/background/big-clouds.png";
+}
