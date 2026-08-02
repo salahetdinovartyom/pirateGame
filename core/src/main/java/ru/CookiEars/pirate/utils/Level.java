@@ -8,4 +8,11 @@ public class Level {
         this.path=path;
         isPassed=false;
     }
+    public void updateIsAvailable() {
+        isPassed=MemoryManager.loadLevelState(name);
+    }
+
+    public String getName() {
+        return name;
+    }
 }

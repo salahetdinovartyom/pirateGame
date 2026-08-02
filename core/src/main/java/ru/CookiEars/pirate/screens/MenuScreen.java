@@ -6,6 +6,8 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 
 import ru.CookiEars.pirate.MyGdxGame;
 import ru.CookiEars.pirate.ui.screens.MenuUi;
+import ru.CookiEars.pirate.utils.Level;
+import ru.CookiEars.pirate.utils.LevelManager;
 
 public class MenuScreen extends BaseScreen {
     private final MenuUi menuUi;
@@ -24,18 +26,12 @@ public class MenuScreen extends BaseScreen {
     }
 
     private void updateList() {
-        String[] levelsArray=new String[] {
-            "First fight",
-            "Revenge of pit",
-            "The empire strikes",
-            "Attack of stars",
-            "Revenge of pit",
-            "Attack of stars",
-            "Attack of stars",
-            "Attack of stars"
-        };
-
-        menuUi.listView.setItems(levelsArray);
+        String[] levelList=new String[LevelManager.getAllLevels().length];
+        for (int i=0; i<LevelManager.getAllLevels().length;i++) {
+            Level level=LevelManager.getAllLevels()[i];
+            levelList[i]=level.getName()+(LevelManager.isLevelAvailable(i) ? "" : "(-)");
+        }
+        menuUi.listView.setItems(levelList);
     }
     private void setListeners() {
         menuUi.exitButton.addListener(onButtonExitClickedListener);
@@ -58,6 +54,7 @@ public class MenuScreen extends BaseScreen {
     ClickListener onButtonStartClickedListener=new ClickListener() {
         @Override
         public void clicked(InputEvent event, float x, float y) {
+            if(!LevelManager.isLevelAvailable(menuUi.listView.getSelectedIndex())) return;
             myGdxGame.setScreen(myGdxGame.gameScreen);
         }
     };
