@@ -8,6 +8,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.utils.Align;
 
 import ru.CookiEars.pirate.ui.UiComponent;
+import ru.CookiEars.pirate.ui.components.LiveBackground;
 
 public class MenuUi extends UiComponent {
     private final int BUTTON_HEIGHT = 60;
@@ -18,6 +19,7 @@ public class MenuUi extends UiComponent {
     private final int SECONDARY_BUTTON_WIDTH = 195;
     private final int LIST_VIEW_WIDTH = 250;
     private final int COMMON_PADDING_BOTTOM = 30;
+    public LiveBackground liveBackground;
     public ScrollPane scrollPane;
     public List<String> listView;
     public TextButton startButton;
@@ -31,6 +33,8 @@ public class MenuUi extends UiComponent {
         settingsButton= new TextButton("Settings",skin);
         listView=new List<>(skin);
         scrollPane=new ScrollPane(listView,skin);
+        liveBackground=new LiveBackground();
+        addActor(liveBackground);
 
         listView.setAlignment(Align.center);
         listView.setWidth(LIST_VIEW_WIDTH);
@@ -46,6 +50,10 @@ public class MenuUi extends UiComponent {
         add(exitButton).width(SECONDARY_BUTTON_WIDTH).height(BUTTON_HEIGHT).space(SPACE_BETWEEN_COMPONENTS);
         add(settingsButton).width(SECONDARY_BUTTON_WIDTH).height(BUTTON_HEIGHT).space(SPACE_BETWEEN_COMPONENTS);
 
+    }
+    @Override
+    public void dispose() {
+        liveBackground.dispose();
     }
 
 

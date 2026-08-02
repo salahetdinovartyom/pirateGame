@@ -9,6 +9,7 @@ import ru.CookiEars.pirate.ui.screens.MenuUi;
 
 public class MenuScreen extends BaseScreen {
     private final MenuUi menuUi;
+
     public MenuScreen(MyGdxGame myGdxGame) {
         super(myGdxGame);
         menuUi=new MenuUi(myGdxGame.skin);
@@ -47,6 +48,13 @@ public class MenuScreen extends BaseScreen {
             Gdx.app.exit();
         }
     };
+
+    @Override
+    public void dispose() {
+        super.dispose();
+        menuUi.dispose();
+    }
+
     ClickListener onButtonStartClickedListener=new ClickListener() {
         @Override
         public void clicked(InputEvent event, float x, float y) {
@@ -59,4 +67,5 @@ public class MenuScreen extends BaseScreen {
             myGdxGame.setScreen(myGdxGame.settingsScreen);
         }
     };
+
 }
