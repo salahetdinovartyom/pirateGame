@@ -10,27 +10,23 @@ import com.badlogic.gdx.utils.Align;
 import ru.CookiEars.pirate.ui.UiComponent;
 import ru.CookiEars.pirate.ui.components.LiveBackground;
 
+import static ru.CookiEars.pirate.game.GameSettings.localisationBundle;
+
 public class MenuUi extends UiComponent {
-    private final int BUTTON_HEIGHT = 60;
-    private final int SPACE_BETWEEN_COMPONENTS = 10;
-    private final int SCROLL_PANEL_WIDTH = 400;
-    private final int SCROLL_PANEL_HEIGHT = 250;
-    private final int START_BUTTON_WIDTH = 400;
-    private final int SECONDARY_BUTTON_WIDTH = 195;
-    private final int LIST_VIEW_WIDTH = 250;
-    private final int COMMON_PADDING_BOTTOM = 30;
+    private final int BUTTON_HEIGHT = 60,SPACE_BETWEEN_COMPONENTS = 10,SCROLL_PANEL_WIDTH = 400,
+        SCROLL_PANEL_HEIGHT = 250,START_BUTTON_WIDTH = 400,
+        SECONDARY_BUTTON_WIDTH = 195,LIST_VIEW_WIDTH = 250,
+        COMMON_PADDING_BOTTOM = 30;
     public LiveBackground liveBackground;
     public ScrollPane scrollPane;
     public List<String> listView;
-    public TextButton startButton;
-    public TextButton exitButton;
-    public TextButton settingsButton;
+    public TextButton startButton,exitButton,settingsButton;
 
     public MenuUi(Skin skin) {
-        Label title=new Label("Pirate treasure",skin,"labelTitle");
-        startButton = new TextButton("Start this game", skin);
-        exitButton=new TextButton("Exit game",skin);
-        settingsButton= new TextButton("Settings",skin);
+        Label title=new Label(localisationBundle.get("menuScreenTitleText"),skin,"labelTitle");
+        startButton = new TextButton(localisationBundle.get("startButtonText"), skin);
+        exitButton=new TextButton(localisationBundle.get("exitButtonText"),skin);
+        settingsButton= new TextButton(localisationBundle.get("settingsButtonText"),skin);
         listView=new List<>(skin);
         scrollPane=new ScrollPane(listView,skin);
         liveBackground=new LiveBackground();
@@ -49,13 +45,9 @@ public class MenuUi extends UiComponent {
         row();
         add(exitButton).width(SECONDARY_BUTTON_WIDTH).height(BUTTON_HEIGHT).space(SPACE_BETWEEN_COMPONENTS);
         add(settingsButton).width(SECONDARY_BUTTON_WIDTH).height(BUTTON_HEIGHT).space(SPACE_BETWEEN_COMPONENTS);
-
     }
     @Override
     public void dispose() {
         liveBackground.dispose();
     }
-
-
-
 }
