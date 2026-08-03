@@ -5,12 +5,7 @@ public class LevelManager {
         new Level(localisationBundle.get("level1Name"),"maps/level1.tmx"),
         new Level(localisationBundle.get("level2Name"),"maps/level2.tmx"),
         new Level(localisationBundle.get("level3Name"),"maps/level3.tmx"),
-        new Level(localisationBundle.get("level1Name"),"maps/level1.tmx"),
-        new Level(localisationBundle.get("level2Name"),"maps/level2.tmx"),
-        new Level(localisationBundle.get("level3Name"),"maps/level3.tmx"),
-        new Level(localisationBundle.get("level1Name"),"maps/level1.tmx"),
-        new Level(localisationBundle.get("level2Name"),"maps/level2.tmx"),
-        new Level(localisationBundle.get("level3Name"),"maps/level3.tmx")
+        new Level(localisationBundle.get("level4Name"),"maps/level4.tmx")
     };
     public static Level getLevel(int levelIdx) {
         levelsArray[levelIdx].updateIsAvailable();
