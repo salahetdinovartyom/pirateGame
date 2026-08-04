@@ -17,4 +17,5 @@ public class GameSettings {
     public static I18NBundle localisationBundle=I18NBundle.createBundle(Gdx.files.internal(LOCALIZATION_BUNDLE_PATH));
 
     public static final float SCALE=0.014f;
+    public static final short PLAYER_BIT=4;
 }
