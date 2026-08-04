@@ -57,6 +57,6 @@
     <property name="walkLength" type="int" value="4"/>
    </properties>
   </object>
-  <object id="24" name="player" x="65" y="160.5" width="30" height="29.5"/>
+  <object id="24" name="player" x="64.125" y="160" width="32" height="32"/>
  </objectgroup>
 </map>

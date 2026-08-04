@@ -18,4 +18,5 @@ public class GameSettings {
 
     public static final float SCALE=0.014f;
     public static final short PLAYER_BIT=4;
+    public static final short PLAYER_LIVES=4;
 }

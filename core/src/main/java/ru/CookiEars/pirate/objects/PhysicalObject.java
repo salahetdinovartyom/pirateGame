@@ -23,9 +23,7 @@ public class PhysicalObject {
             fixture.setUserData(objectHolder);
         }
     }
-    public PhysicalObject build(Object objectHolder) {
-        return new PhysicalObject(body,fixturesList,objectHolder);
-    }
+
 
     public Body getBody() {
         return body;
@@ -70,6 +68,8 @@ public class PhysicalObject {
             polygonShape.dispose();
             return this;
         }
-
+        public PhysicalObject build(Object objectHolder) {
+            return new PhysicalObject(body,fixturesList,objectHolder);
+        }
     }
 }
